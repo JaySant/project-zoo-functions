@@ -6,5 +6,4 @@ function getSpeciesByIds(...ids) {
   const getSpecie = arrSpecies.filter((species) => ids.find((elemento) => species.id === elemento));
   return getSpecie;
 }
-
 module.exports = getSpeciesByIds;
