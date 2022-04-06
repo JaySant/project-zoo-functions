@@ -15,12 +15,9 @@ function calculateEntry(entrants) {
   if (entrants === undefined || Object.values(entrants).length === 0) {
     return 0;
   }
-  const { child } = countEntrants(entrants).child;
-  const { adult } = countEntrants(entrants).adult;
-  const { senior } = countEntrants(entrants).senior;
-  const { prices } = data.prices;
-  const totalVisitors = child * prices.child + adult * prices.adult + senior * prices.senior;
-  return totalVisitors;
+  const { child, adult, senior } = countEntrants(entrants);
+  const total = child * data.prices.child + adult * data.prices.adult + senior * data.prices.senior;
+  return total;
 }
 
 module.exports = { calculateEntry, countEntrants };
